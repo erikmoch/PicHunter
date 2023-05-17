@@ -33,7 +33,7 @@ namespace PicHunter
                 Logger.i("Starting searcher.");
 
                 searcher = new Searcher("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36", path);
-                searcher.Start();
+                Task.Run(() => searcher.Start());
             }
             else
             {
@@ -42,6 +42,8 @@ namespace PicHunter
                 Console.ReadKey();
                 Environment.Exit(0);
             }
+
+            Console.ReadKey();
         }
     }
 }
